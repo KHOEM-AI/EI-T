@@ -29,12 +29,11 @@ import type {
 } from './api.schemas';
 
 import { customFetch } from '../custom-fetch';
-import type { ErrorType , BodyType } from '../custom-fetch';
+import type { ErrorType, BodyType } from '../custom-fetch';
 
 type AwaitedInput<T> = PromiseLike<T> | T;
 
-      type Awaited<O> = O extends AwaitedInput<infer T> ? T : never;
-
+type Awaited<O> = O extends AwaitedInput<infer T> ? T : never;
 
 type SecondParameter<T extends (...args: never) => unknown> = Parameters<T>[1];
 
@@ -54,7 +53,6 @@ const withQueryKey = <T extends object, K>(query: T, queryKey: K): T & { queryKe
 };
 
 export const getHealthCheckUrl = () => {
-
   return `/api/healthz`
 }
 
@@ -62,32 +60,22 @@ export const getHealthCheckUrl = () => {
  * Returns server health status
  * @summary Health check
  */
-export const healthCheck = async ( options?: Parameters<typeof customFetch>[1]): Promise<HealthStatus> => {
-
-  return customFetch<HealthStatus>(getHealthCheckUrl(),
-  {
+export const healthCheck = async (options?: Parameters<typeof customFetch>[1]): Promise<HealthStatus> => {
+  return customFetch<HealthStatus>(getHealthCheckUrl(), {
     ...options,
     method: 'GET'
-
- }
-);}
+  });
+}
 
 export const getHealthCheckQueryKey = () => {
-    return [
-    `/api/healthz`
-    ] as const;
-    }
+  return [`/api/healthz`] as const;
+}
 
-export const getHealthCheckQueryOptions = <TData = Awaited<ReturnType<typeof healthCheck>>, TError = ErrorType<unknown>>( options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof healthCheck>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
-) => {
-
-const {query: queryOptions, request: requestOptions} = options ?? {};
-
-  const queryKey =  queryOptions?.queryKey ?? getHealthCheckQueryKey();
-
+export const getHealthCheckQueryOptions = <TData = Awaited<ReturnType<typeof healthCheck>>, TError = ErrorType<unknown>>(options?: { query?: UseQueryOptions<Awaited<ReturnType<typeof healthCheck>>, TError, TData>, request?: SecondParameter<typeof customFetch> }) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {};
+  const queryKey = queryOptions?.queryKey ?? getHealthCheckQueryKey();
   const queryFn: QueryFunction<Awaited<ReturnType<typeof healthCheck>>> = ({ signal }) => healthCheck({ signal, ...requestOptions });
-
- return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof healthCheck>>, TError, TData> & { queryKey: QueryKey }
+  return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<Awaited<ReturnType<typeof healthCheck>>, TError, TData> & { queryKey: QueryKey }
 }
 
 export type HealthCheckQueryResult = NonNullable<Awaited<ReturnType<typeof healthCheck>>>
@@ -96,22 +84,14 @@ export type HealthCheckQueryError = ErrorType<unknown>
 /**
  * @summary Health check
  */
-
-export function useHealthCheck<TData = Awaited<ReturnType<typeof healthCheck>>, TError = ErrorType<unknown>>(
-  options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof healthCheck>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
-
- ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } {
-
+export function useHealthCheck<TData = Awaited<ReturnType<typeof healthCheck>>, TError = ErrorType<unknown>>(options?: { query?: UseQueryOptions<Awaited<ReturnType<typeof healthCheck>>, TError, TData>, request?: SecondParameter<typeof customFetch> }): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
   const queryOptions = getHealthCheckQueryOptions(options)
-
-  const query = useQuery(queryOptions) as  UseQueryResult<TData, TError> & { queryKey: QueryKey };
-
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & { queryKey: QueryKey };
   return withQueryKey(query, queryOptions.queryKey);
 }
 
 export const getValidateInputUrl = () => {
-  
-return `/api/security/validate`
+  return `/api/security/validate`
 }
 
 /**
@@ -119,65 +99,49 @@ return `/api/security/validate`
  * @summary Validate input through security engine
  */
 export const validateInput = async (validationInput: ValidationInput, options?: Parameters<typeof customFetch>[1]): Promise<ValidationResult> => {
-
-  return customFetch<ValidationResult>(getValidateInputUrl(),
-  {
+  return customFetch<ValidationResult>(getValidateInputUrl(), {
     ...options,
     method: 'POST',
     headers: { 'Content-Type': 'application/json', ...options?.headers },
     body: JSON.stringify(validationInput)
-  }
-);}
+  });
+}
 
-export const getValidateInputMutationOptions = <TError = ErrorType<unknown>,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof validateInput>>, TError,{data: BodyType<ValidationInput>}, TContext>, request?: SecondParameter<typeof customFetch>}
-): UseMutationOptions<Awaited<ReturnType<typeof validateInput>>, TError,{data: BodyType<ValidationInput>}, TContext> => {
-
-const mutationKey = ['validateInput'];
-const {mutation: mutationOptions, request: requestOptions} = options ?
-      options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
+export const getValidateInputMutationOptions = <TError = ErrorType<unknown>, TContext = unknown>(options?: { mutation?: UseMutationOptions<Awaited<ReturnType<typeof validateInput>>, TError, { data: BodyType<ValidationInput> }, TContext>, request?: SecondParameter<typeof customFetch> }): UseMutationOptions<Awaited<ReturnType<typeof validateInput>>, TError, { data: BodyType<ValidationInput> }, TContext> => {
+  const mutationKey = ['validateInput'];
+  const { mutation: mutationOptions, request: requestOptions } = options ?
+    options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
       options
-      : {...options, mutation: {...options.mutation, mutationKey}}
-      : {mutation: { mutationKey, }, request: undefined};
+      : { ...options, mutation: { ...options.mutation, mutationKey } }
+    : { mutation: { mutationKey, }, request: undefined };
 
-  const mutationFn: MutationFunction<Awaited<ReturnType<typeof validateInput>>, {data: BodyType<ValidationInput>}> = (props) => {
-          const {data} = props ?? {};
+  const mutationFn: MutationFunction<Awaited<ReturnType<typeof validateInput>>, { data: BodyType<ValidationInput> }> = (props) => {
+    const { data } = props ?? {};
+    return validateInput(data, requestOptions)
+  }
 
-          return  validateInput(data,requestOptions)
-        }
+  return { mutationFn, ...mutationOptions }
+}
 
-  return  { mutationFn, ...mutationOptions }}
+export type ValidateInputMutationResult = NonNullable<Awaited<ReturnType<typeof validateInput>>>
+export type ValidateInputMutationBody = BodyType<ValidationInput>
+export type ValidateInputMutationError = ErrorType<unknown>
 
-    export type ValidateInputMutationResult = NonNullable<Awaited<ReturnType<typeof validateInput>>>
-    export type ValidateInputMutationBody = BodyType<ValidationInput>
-    export type ValidateInputMutationError = ErrorType<unknown>
-
-    /**
+/**
  * @summary Validate input through security engine
  */
-export const useValidateInput = <TError = ErrorType<unknown>,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof validateInput>>, TError,{data: BodyType<ValidationInput>}, TContext>, request?: SecondParameter<typeof customFetch>}
- ): UseMutationResult<
-        Awaited<ReturnType<typeof validateInput>>,
-        TError,
-        {data: BodyType<ValidationInput>},
-        TContext
-      > => {
-      return useMutation(getValidateInputMutationOptions(options));
-    }
+export const useValidateInput = <TError = ErrorType<unknown>, TContext = unknown>(options?: { mutation?: UseMutationOptions<Awaited<ReturnType<typeof validateInput>>, TError, { data: BodyType<ValidationInput> }, TContext>, request?: SecondParameter<typeof customFetch> }): UseMutationResult<Awaited<ReturnType<typeof validateInput>>, TError, { data: BodyType<ValidationInput> }, TContext> => {
+  return useMutation(getValidateInputMutationOptions(options));
+}
 
 export const getGetValidationHistoryUrl = (params?: GetValidationHistoryParams,) => {
   const normalizedParams = new URLSearchParams();
-
   Object.entries(params || {}).forEach(([key, value]) => {
-
     if (value !== undefined) {
       normalizedParams.append(key, value === null ? 'null' : String(value))
     }
   });
-
   const stringifiedParams = normalizedParams.toString();
-
   return stringifiedParams.length > 0 ? `/api/security/history?${stringifiedParams}` : `/api/security/history`
 }
 
@@ -186,31 +150,21 @@ export const getGetValidationHistoryUrl = (params?: GetValidationHistoryParams,)
  * @summary Get recent validation history
  */
 export const getValidationHistory = async (params?: GetValidationHistoryParams, options?: Parameters<typeof customFetch>[1]): Promise<ValidationResult[]> => {
-
-  return customFetch<ValidationResult[]>(getGetValidationHistoryUrl(params),
-  {
+  return customFetch<ValidationResult[]>(getGetValidationHistoryUrl(params), {
     ...options,
     method: 'GET'
-
-  }
-);}
+  });
+}
 
 export const getGetValidationHistoryQueryKey = (params?: GetValidationHistoryParams,) => {
-    return [
-    `/api/security/history`, ...(params ? [params] : [])
-    ] as const;
-    }
+  return [`/api/security/history`, ...(params ? [params] : [])] as const;
+}
 
-export const getGetValidationHistoryQueryOptions = <TData = Awaited<ReturnType<typeof getValidationHistory>>, TError = ErrorType<unknown>>(params?: GetValidationHistoryParams, options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getValidationHistory>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
-) => {
-
-const {query: queryOptions, request: requestOptions} = options ?? {};
-
- const queryKey =  queryOptions?.queryKey ?? getGetValidationHistoryQueryKey(params);
-
- const queryFn: QueryFunction<Awaited<ReturnType<typeof getValidationHistory>>> = ({ signal }) => getValidationHistory(params, { signal, ...requestOptions });
-
- return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getValidationHistory>>, TError, TData> & { queryKey: QueryKey }
+export const getGetValidationHistoryQueryOptions = <TData = Awaited<ReturnType<typeof getValidationHistory>>, TError = ErrorType<unknown>>(params?: GetValidationHistoryParams, options?: { query?: UseQueryOptions<Awaited<ReturnType<typeof getValidationHistory>>, TError, TData>, request?: SecondParameter<typeof customFetch> }) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {};
+  const queryKey = queryOptions?.queryKey ?? getGetValidationHistoryQueryKey(params);
+  const queryFn: QueryFunction<Awaited<ReturnType<typeof getValidationHistory>>> = ({ signal }) => getValidationHistory(params, { signal, ...requestOptions });
+  return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<Awaited<ReturnType<typeof getValidationHistory>>, TError, TData> & { queryKey: QueryKey }
 }
 
 export type GetValidationHistoryQueryResult = NonNullable<Awaited<ReturnType<typeof getValidationHistory>>>
@@ -219,111 +173,74 @@ export type GetValidationHistoryQueryError = ErrorType<unknown>
 /**
  * @summary Get recent validation history
  */
-
-export function useGetValidationHistory<TData = Awaited<ReturnType<typeof getValidationHistory>>, TError = ErrorType<unknown>>(
- params?: GetValidationHistoryParams, options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getValidationHistory>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
-
- ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } {
-
-  const queryOptions = getGetValidationHistoryQueryOptions(params,options)
-
-  const query = useQuery(queryOptions) as  UseQueryResult<TData, TError> & { queryKey: QueryKey };
-
+export function useGetValidationHistory<TData = Awaited<ReturnType<typeof getValidationHistory>>, TError = ErrorType<unknown>>(params?: GetValidationHistoryParams, options?: { query?: UseQueryOptions<Awaited<ReturnType<typeof getValidationHistory>>, TError, TData>, request?: SecondParameter<typeof customFetch> }): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
+  const queryOptions = getGetValidationHistoryQueryOptions(params, options)
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & { queryKey: QueryKey };
   return withQueryKey(query, queryOptions.queryKey);
 }
 
 export const getGetSecurityStatsUrl = () => {
-
-return `/api/security/stats`
+  return `/api/security/stats`
 }
 
 /**
  * Returns aggregate stats about validated inputs
  * @summary Get security engine statistics
  */
-export const getSecurityStats = async ( options?: Parameters<typeof customFetch>[1]): Promise<SecurityStats> => {
-
-  return customFetch<SecurityStats>(getGetSecurityStatsUrl(),
-  {
+export const getSecurityStats = async (options?: Parameters<typeof customFetch>[1]): Promise<SecurityStats> => {
+  return customFetch<SecurityStats>(getGetSecurityStatsUrl(), {
     ...options,
     method: 'GET'
-
- }
-);}
+  });
+}
 
 export const getGetSecurityStatsQueryKey = () => {
-    return [
-    `/api/security/stats`
-    ] as const;
-    }
+  return [`/api/security/stats`] as const;
+}
 
-export const getGetSecurityStatsQueryOptions = <TData = Awaited<ReturnType<typeof getSecurityStats>>, TError = ErrorType<unknown>>( options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getSecurityStats>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
-) => {
-
-const {query: queryOptions, request: requestOptions} = options ?? {};
-
-  const queryKey =  queryOptions?.queryKey ?? getGetSecurityStatsQueryKey();
-
+export const getGetSecurityStatsQueryOptions = <TData = Awaited<ReturnType<typeof getSecurityStats>>, TError = ErrorType<unknown>>(options?: { query?: UseQueryOptions<Awaited<ReturnType<typeof getSecurityStats>>, TError, TData>, request?: SecondParameter<typeof customFetch> }) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {};
+  const queryKey = queryOptions?.queryKey ?? getGetSecurityStatsQueryKey();
   const queryFn: QueryFunction<Awaited<ReturnType<typeof getSecurityStats>>> = ({ signal }) => getSecurityStats({ signal, ...requestOptions });
-
- return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getSecurityStats>>, TError, TData> & { queryKey: QueryKey }
+  return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<Awaited<ReturnType<typeof getSecurityStats>>, TError, TData> & { queryKey: QueryKey }
 }
 
 export type GetSecurityStatsQueryResult = NonNullable<Awaited<ReturnType<typeof getSecurityStats>>>
 export type GetSecurityStatsQueryError = ErrorType<unknown>
 
-
 /**
  * @summary Get security engine statistics
  */
-
-export function useGetSecurityStats<TData = Awaited<ReturnType<typeof getSecurityStats>>, TError = ErrorType<unknown>>(
-  options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getSecurityStats>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
-
- ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } {
-
+export function useGetSecurityStats<TData = Awaited<ReturnType<typeof getSecurityStats>>, TError = ErrorType<unknown>>(options?: { query?: UseQueryOptions<Awaited<ReturnType<typeof getSecurityStats>>, TError, TData>, request?: SecondParameter<typeof customFetch> }): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
   const queryOptions = getGetSecurityStatsQueryOptions(options)
-
-  const query = useQuery(queryOptions) as  UseQueryResult<TData, TError> & { queryKey: QueryKey };
-
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & { queryKey: QueryKey };
   return withQueryKey(query, queryOptions.queryKey);
 }
 
 export const getGetSecurityRulesUrl = () => {
-
- return `/api/security/rules`
+  return `/api/security/rules`
 }
 
 /**
  * Returns a list of all configured security check rules
  * @summary Get all security rules
  */
-export const getSecurityRules = async ( options?: Parameters<typeof customFetch>[1]): Promise<SecurityRule[]> => {
-
-  return customFetch<SecurityRule[]>(getGetSecurityRulesUrl(),
-  {
+export const getSecurityRules = async (options?: Parameters<typeof customFetch>[1]): Promise<SecurityRule[]> => {
+  return customFetch<SecurityRule[]>(getGetSecurityRulesUrl(), {
     ...options,
     method: 'GET'
-
-  }
-);}
+  });
+}
 
 export const getGetSecurityRulesQueryKey = () => {
-    return [
-    `/api/security/rules`
-    ] as const;
-    }
+  return [`/api/security/rules`] as const;
+}
 
-export const getGetSecurityRulesQueryOptions = <TData = Awaited<ReturnType<typeof getSecurityRules>>, TError = ErrorType<unknown>>( options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getSecurityRules>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
-) => {
-
-const {query: queryOptions, request: requestOptions} = options ?? {};
-
-  const queryKey =  queryOptions?.queryKey ?? getGetSecurityRulesQueryKey();
-
+export const getGetSecurityRulesQueryOptions = <TData = Awaited<ReturnType<typeof getSecurityRules>>, TError = ErrorType<unknown>>(options?: { query?: UseQueryOptions<Awaited<ReturnType<typeof getSecurityRules>>, TError, TData>, request?: SecondParameter<typeof customFetch> }) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {};
+  const queryKey = queryOptions?.queryKey ?? getGetSecurityRulesQueryKey();
   const queryFn: QueryFunction<Awaited<ReturnType<typeof getSecurityRules>>> = ({ signal }) => getSecurityRules({ signal, ...requestOptions });
-
-return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getSecurityRules>>, TError, TData> & { queryKey: QueryKey }
+  return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<Awaited<ReturnType<typeof getSecurityRules>>, TError, TData> & { queryKey: QueryKey }
 }
 
 export type GetSecurityRulesQueryResult = NonNullable<Awaited<ReturnType<typeof getSecurityRules>>>
@@ -332,15 +249,8 @@ export type GetSecurityRulesQueryError = ErrorType<unknown>
 /**
  * @summary Get all security rules
  */
-
-export function useGetSecurityRules<TData = Awaited<ReturnType<typeof getSecurityRules>>, TError = ErrorType<unknown>>(
-  options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getSecurityRules>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
-
- ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } {
-
+export function useGetSecurityRules<TData = Awaited<ReturnType<typeof getSecurityRules>>, TError = ErrorType<unknown>>(options?: { query?: UseQueryOptions<Awaited<ReturnType<typeof getSecurityRules>>, TError, TData>, request?: SecondParameter<typeof customFetch> }): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
   const queryOptions = getGetSecurityRulesQueryOptions(options)
-
-  const query = useQuery(queryOptions) as  UseQueryResult<TData, TError> & { queryKey: QueryKey };
-
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & { queryKey: QueryKey };
   return withQueryKey(query, queryOptions.queryKey);
 }
