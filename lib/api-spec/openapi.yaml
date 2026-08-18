@@ -1,0 +1,194 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: KHOEM_AI Security Engine API
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: security
+    description: Security engine operations
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+
+  /security/validate:
+    post:
+      operationId: validateInput
+      tags: [security]
+      summary: Validate input through security engine
+      description: Run input through all security checks and return results
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ValidationInput"
+      responses:
+        "200":
+          description: Validation result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ValidationResult"
+
+  /security/history:
+    get:
+      operationId: getValidationHistory
+      tags: [security]
+      summary: Get recent validation history
+      description: Returns a list of recent validation attempts
+      parameters:
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 20
+      responses:
+        "200":
+          description: List of validation history
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ValidationResult"
+
+  /security/stats:
+    get:
+      operationId: getSecurityStats
+      tags: [security]
+      summary: Get security engine statistics
+      description: Returns aggregate stats about validated inputs
+      responses:
+        "200":
+          description: Security statistics
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SecurityStats"
+
+  /security/rules:
+    get:
+      operationId: getSecurityRules
+      tags: [security]
+      summary: Get all security rules
+      description: Returns a list of all configured security check rules
+      responses:
+        "200":
+          description: List of security rules
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/SecurityRule"
+
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+
+    ValidationInput:
+      type: object
+      required: [text]
+      properties:
+        text:
+          type: string
+          description: The input text to validate
+
+    CheckResult:
+      type: object
+      required: [name, passed, category, description]
+      properties:
+        name:
+          type: string
+          description: Name of the security check
+        passed:
+          type: boolean
+          description: Whether this check passed
+        category:
+          type: string
+          description: "Category: input or output"
+        description:
+          type: string
+          description: Human-readable description of what was checked
+
+    ValidationResult:
+      type: object
+      required: [id, text, passed, checks, timestamp]
+      properties:
+        id:
+          type: number
+          description: Unique identifier
+        text:
+          type: string
+          description: The input text that was validated
+        passed:
+          type: boolean
+          description: Whether the input passed all checks
+        blockedBy:
+          type: ["string", "null"]
+          description: Name of the check that blocked this input, if any
+        checks:
+          type: array
+          items:
+            $ref: "#/components/schemas/CheckResult"
+          description: Detailed results per check
+        timestamp:
+          type: string
+          description: ISO timestamp of validation
+
+    SecurityStats:
+      type: object
+      required: [totalValidated, totalBlocked, totalPassed, blocksByType]
+      properties:
+        totalValidated:
+          type: number
+        totalBlocked:
+          type: number
+        totalPassed:
+          type: number
+        blocksByType:
+          type: object
+          additionalProperties:
+            type: number
+          description: Map of check name to blocked count
+
+    SecurityRule:
+      type: object
+      required: [id, name, category, description, enabled]
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        category:
+          type: string
+          description: "input or output"
+        description:
+          type: string
+        enabled:
+          type: boolean
+          
