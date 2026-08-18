@@ -164,5 +164,40 @@ EI-T/
         └── 📄 hello.ts
         
 
+<details>
+  <summary>🎓 Sololearn Certificates & Learn AI Courses</summary>
+
+  <h3>🎓 Sololearn Certificates</h3>
+  <ul>
+    <li>1. <a href="https://api2.sololearn.com/v2/certificates/CC-XE2NCCOS/image/png?t=639128640620412910">Certificate 1</a></li>
+    <li>2. <a href="https://api2.sololearn.com/v2/certificates/CC-2WA6T5OP/image/png?t=639128878454665520">Certificate 2</a></li>
+    <li>3. <a href="https://api2.sololearn.com/v2/certificates/CC-UH3IDFBV/image/png?t=639129091230893450">Certificate 3</a></li>
+    <li>4. <a href="https://api2.sololearn.com/v2/certificates/CC-HYTVRR3L/image/png?t=639129398817280440">Certificate 4</a></li>
+    <li>5. <a href="https://api2.sololearn.com/v2/certificates/CC-X96HYFNZ/image/png?t=639133794186112300">Certificate 5</a></li>
+    <li>6. <a href="https://api2.sololearn.com/v2/certificates/CC-Z3HSTTIM/image/png?t=639130143940270740">Certificate 6</a></li>
+    <li>7. <a href="https://api2.sololearn.com/v2/certificates/CC-CWFGHTUH/image/png?t=639133720572463890">Certificate 7</a></li>
+    <li>8. <a href="https://api2.sololearn.com/v2/certificates/CC-LSNWACSJ/image/png?t=639131461304257820">Certificate 8</a></li>
+    <li>9. <a href="https://api2.sololearn.com/v2/certificates/CC-8YU78BQD/image/png?t=639132372756953970">Certificate 9</a></li>
+    <li>10. <a href="https://api2.sololearn.com/v2/certificates/CC-HKXN70WI/image/png?t=639132403450505960">Certificate 10</a></li>
+    <li>11. <a href="https://api2.sololearn.com/v2/certificates/CC-Z4FBVBHB/image/png?t=639132438185127310">Certificate 11</a></li>
+    <li>12. <a href="https://api2.sololearn.com/v2/certificates/CC-O8RLTDHU/image/png?t=639132485355121790">Certificate 12</a></li>
+    <li>13. <a href="https://api2.sololearn.com/v2/certificates/CC-JXYYNWM3/image/png?t=639132517092063730">Certificate 13</a></li>
+    <li>14. <a href="https://api2.sololearn.com/v2/certificates/CC-UAWDOGD7/image/png?t=639132551108277950">Certificate 14</a></li>
+    <li>15. <a href="https://api2.sololearn.com/v2/certificates/CC-RU0YW9AF/image/png?t=639132622582618440">Certificate 15</a></li>
+    <li>16. <a href="https://api2.sololearn.com/v2/certificates/CC-6MMYUTDO/image/png?t=639133281167127080">Certificate 16</a></li>
+    <li>17. <a href="https://api2.sololearn.com/v2/certificates/CC-ZCCL5WTO/image/png?t=639133319039254850">Certificate 17</a></li>
+    <li>18. <a href="https://api2.sololearn.com/v2/certificates/CC-8ANKARHZ/image/png?t=639133353114898540">Certificate 18</a></li>
+    <li>19. <a href="https://api2.sololearn.com/v2/certificates/CC-6YTRBFWG/image/png?t=639133771918688590">Certificate 19</a></li>
+    <li>20. <a href="https://api2.sololearn.com/v2/certificates/CC-IPBPLVJY/image/png?t=639138668032846180">Certificate 20</a></li>
+    <li>21. <a href="https://api2.sololearn.com/v2/certificates/CC-OSVHPH0W/image/png?t=639146158504658560">Certificate 21</a></li>
+    <li>22. <a href="https://api2.sololearn.com/v2/certificates/CC-JYPRRMIU/image/png?t=639171253054913090">Certificate 22</a></li>
+    <li>23. <a href="https://api2.sololearn.com/v2/certificates/CC-4LH8JFHT/image/png?t=639222496877388080">Certificate 23</a></li>
+  </ul>
+
+  <h3>🤖 Learn AI Course</h3>
+  <ul>
+    <li>24. <a href="https://api2.sololearn.com/v2/certificates/CC-GENAI-PRACTICE/image/png">Certificate 24 (Generative AI in Practice)</a></li>
+  </ul>
+</details>
 
 
