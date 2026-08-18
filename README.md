@@ -2,7 +2,7 @@
 
 
 <details>
-<summary>📜 <b>ចុចទីនេះដើម្បីមើល ថតឯកសារ EI-T ទាំងអស់ (KHOEM-AI/EI-T Certificates)</b></summary>
+<summary>📜 <b>ចុចទីនេះដើម្បីមើល ថតឯកសារ EI-T ទាំងអស់ (KHOEM-AI/EI-T )</b></summary>
 EI-T/
 ├── 📄 README.md
 ├── 📄 package.json
