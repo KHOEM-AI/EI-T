@@ -4,7 +4,7 @@
 
 👇
 <details>
-<summary>📜 <b>Hello, click here to download all files.==> EI-T  (EI-T 🌐)</b></summary>
+<summary>📜 <b>Hello, Click here to view all folders and files👉 EI-T  (EI-T 🌐)</b></summary>
 EI-T/
 ├── 📄 README.md
 ├── 📄 package.json
