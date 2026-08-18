@@ -90,6 +90,5 @@ export const GetSecurityRulesResponseItem = zod.object({
   "enabled": zod.boolean()
 })
 export const GetSecurityRulesResponse = zod.array(GetSecurityRulesResponseItem)
-=
-zod.array(GetSecurityRulesResponseItem)
+
 
