@@ -1,169 +1,193 @@
 # 🌐 KHOEM-AI
 
 # 🌐 EI-T
-
-👇
-<details>
-<summary>📜 <b>Hello, Click here to view all folders and files👉 EI-T  (EI-T 🌐)</b></summary>
 EI-T/
-├── 📄 README.md
-├── 📄 package.json
-├── 📄 pnpm-lock.yaml
-├── 📄 pnpm-workspace.yaml
-├── 📄 replit.md
-├── 📄 tsconfig.base.json
-├── 📄 tsconfig.json
-├── 📁 artifacts/
-│   ├── 📁 api-server/
-│   │   ├── 📄 build.mjs
-│   │   ├── 📄 package.json
-│   │   ├── 📄 tsconfig.json
-│   │   ├── 📁 .replit-artifact/
-│   │   │   └── 📄 artifact.toml
-│   │   └── 📁 src/
-│   │       ├── 📄 app.ts
-│   │       ├── 📄 index.ts
-│   │       ├── 📁 lib/
-│   │       │   ├── 📄 .gitkeep
-│   │       │   └── 📄 logger.ts
-│   │       ├── 📁 middlewares/
-│   │       │   └── 📄 .gitkeep
-│   │       └── 📁 routes/
-│   │           ├── 📄 health.ts
-│   │           ├── 📄 index.ts
-│   │           └── 📄 security.ts
-│   ├── 📁 khoem-ai/
-│   │   ├── 📄 components.json
-│   │   ├── 📄 index.html
-│   │   ├── 📄 package.json
-│   │   ├── 📄 tsconfig.json
-│   │   ├── 📄 vite.config.ts
-│   │   ├── 📁 public/
-│   │   │   ├── 📄 favicon.svg
-│   │   │   └── 📄 robots.txt
-│   │   └── 📁 src/
-│   │       ├── 📄 App.tsx
-│   │       ├── 📄 index.css
-│   │       ├── 📄 main.tsx
-│   │       ├── 📁 components/
-│   │       │   ├── 📄 layout.tsx
-│   │       │   └── 📁 ui/
-│   │       │       ├── 📄 accordion.tsx
-│   │       │       ├── 📄 alert-dialog.tsx
-│   │       │       ├── 📄 alert.tsx
-│   │       │       ├── 📄 aspect-ratio.tsx
-│   │       │       ├── 📄 avatar.tsx
-│   │       │       ├── 📄 badge.tsx
-│   │       │       ├── 📄 breadcrumb.tsx
-│   │       │       ├── 📄 button-group.tsx
-│   │       │       ├── 📄 button.tsx
-│   │       │       ├── 📄 calendar.tsx
-│   │       │       ├── 📄 card.tsx
-│   │       │       ├── 📄 carousel.tsx
-│   │       │       ├── 📄 chart.tsx
-│   │       │       ├── 📄 checkbox.tsx
-│   │       │       ├── 📄 collapsible.tsx
-│   │       │       ├── 📄 command.tsx
-│   │       │       ├── 📄 context-menu.tsx
-│   │       │       ├── 📄 dialog.tsx
-│   │       │       ├── 📄 drawer.tsx
-│   │       │       ├── 📄 dropdown-menu.tsx
-│   │       │       ├── 📄 empty.tsx
-│   │       │       ├── 📄 field.tsx
-│   │       │       ├── 📄 form.tsx
-│   │       │       ├── 📄 hover-card.tsx
-│   │       │       ├── 📄 input-group.tsx
-│   │       │       ├── 📄 input-otp.tsx
-│   │       │       ├── 📄 input.tsx
-│   │       │       ├── 📄 item.tsx
-│   │       │       ├── 📄 kbd.tsx
-│   │       │       ├── 📄 label.tsx
-│   │       │       ├── 📄 menubar.tsx
-│   │       │       ├── 📄 navigation-menu.tsx
-│   │       │       ├── 📄 pagination.tsx
-│   │       │       ├── 📄 popover.tsx
-│   │       │       ├── 📄 progress.tsx
-│   │       │       ├── 📄 radio-group.tsx
-│   │       │       ├── 📄 resizable.tsx
-│   │       │       ├── 📄 scroll-area.tsx
-│   │       │       ├── 📄 select.tsx
-│   │       │       ├── 📄 separator.tsx
-│   │       │       ├── 📄 sheet.tsx
-│   │       │       ├── 📄 sidebar.tsx
-│   │       │       ├── 📄 skeleton.tsx
-│   │       │       ├── 📄 slider.tsx
-│   │       │       ├── 📄 sonner.tsx
-│   │       │       ├── 📄 spinner.tsx
-│   │       │       ├── 📄 switch.tsx
-│   │       │       ├── 📄 table.tsx
-│   │       │       ├── 📄 tabs.tsx
-│   │       │       ├── 📄 textarea.tsx
-│   │       │       ├── 📄 toast.tsx
-│   │       │       ├── 📄 toaster.tsx
-│   │       │       ├── 📄 toggle-group.tsx
-│   │       │       ├── 📄 toggle.tsx
-│   │       │       └── 📄 tooltip.tsx
-│   │       ├── 📁 hooks/
-│   │       │   ├── 📄 use-dark-mode.ts
-│   │       │   ├── 📄 use-mobile.tsx
-│   │       │   └── 📄 use-toast.ts
-│   │       ├── 📁 lib/
-│   │       │   └── 📄 utils.ts
-│   │       └── 📁 pages/
-│   │           ├── 📄 dashboard.tsx
-│   │           ├── 📄 not-found.tsx
-│   │           ├── 📄 rules.tsx
-│   │           └── 📄 scanner.tsx
-│   └── 📁 mockup-sandbox/
-│       └── 📁 src/
-│           ├── 📄 App.tsx
-│           └── 📄 main.tsx
-├── 📁 lib/
-│   ├── 📁 api-client-react/
-│   │   ├── 📄 package.json
-│   │   ├── 📄 tsconfig.json
-│   │   └── 📁 src/
-│   │       ├── 📄 index.ts
-│   │       └── 📁 generated/
-│   │           ├── 📄 api.schemas.ts
-│   │           └── 📄 api.ts
-│   ├── 📁 api-spec/
-│   │   ├── 📄 orval.config.ts
-│   │   ├── 📄 package.json
-│   │   └── 📄 openapi.yaml
-│   ├── 📁 api-zod/
-│   │   ├── 📄 package.json
-│   │   ├── 📄 tsconfig.json
-│   │   └── 📁 src/
-│   │       ├── 📄 index.ts
-│   │       └── 📁 generated/
-│   │           ├── 📄 api.ts
-│   │           └── 📁 types/
-│   │               ├── 📄 checkResult.ts
-│   │               ├── 📄 getValidationHistoryParams.ts
-│   │               ├── 📄 healthStatus.ts
-│   │               ├── 📄 index.ts
-│   │               ├── 📄 securityRule.ts
-│   │               ├── 📄 securityStats.ts
-│   │               ├── 📄 securityStatsBlocksByType.ts
-│   │               ├── 📄 validationInput.ts
-│   │               └── 📄 validationResult.ts
-│   └── 📁 db/
-│       ├── 📄 drizzle.config.ts
-│       ├── 📄 package.json
-│       ├── 📄 tsconfig.json
-│       └── 📁 src/
-│           ├── 📄 index.ts
-│           └── 📁 schema/
-│               └── 📄 index.ts
-└── 📁 scripts/
-    ├── 📄 package.json
-    ├── 📄 post-merge.sh
-    ├── 📄 tsconfig.json
-    └── 📁 src/
-        └── 📄 hello.ts
-        
+├── artifacts/
+│   ├── api-server/
+│   │   ├── .repli-artifact/
+│   │   │   └── artifact.toml
+│   │   ├── dist/
+│   │   │   ├── index.mjs
+│   │   │   ├── pino-pretty.mjs
+│   │   │   ├── pino-worker.mjs
+│   │   │   ├── pino-file.mjs.map
+│   │   │   ├── thread-stream-worker.mjs
+│   │   │   ├── thread-stream-worker.mjs.map
+│   │   │   ├── pino-file.mjs
+│   │   │   ├── pino-worker.mjs.map
+│   │   │   └── pino-pretty.mjs.map
+│   │   ├── src/
+│   │   │   ├── lib/
+│   │   │   │   ├── .gitkeep
+│   │   │   │   ├── logger.ts
+│   │   │   │   └── securityEngine.ts
+│   │   │   ├── middlewares/
+│   │   │   │   └── .gitkeep
+│   │   │   ├── routes/
+│   │   │   │   ├── health.ts
+│   │   │   │   ├── index.ts
+│   │   │   │   └── security.ts
+│   │   │   └── app.ts
+│   │   ├── build.mjs
+│   │   ├── package.json
+│   │   └── tsconfig.json
+│   └── khoem-ai/
+│       ├── public/
+│       │   ├── favicon.svg
+│       │   └── robots.txt
+│       ├── src/
+│       │   ├── components/
+│       │   │   ├── ui/
+│       │   │   │   ├── accordion.tsx
+│       │   │   │   ├── alert-dialog.tsx
+│       │   │   │   ├── alert.tsx
+│       │   │   │   ├── aspect-ratio.tsx
+│       │   │   │   ├── avatar.tsx
+│       │   │   │   ├── badge.tsx
+│       │   │   │   ├── breadcrumb.tsx
+│       │   │   │   ├── button-group.tsx
+│       │   │   │   ├── button.tsx
+│       │   │   │   ├── calendar.tsx
+│       │   │   │   ├── card.tsx
+│       │   │   │   ├── carousel.tsx
+│       │   │   │   ├── chart.tsx
+│       │   │   │   ├── checkbox.tsx
+│       │   │   │   ├── collapsible.tsx
+│       │   │   │   ├── command.tsx
+│       │   │   │   ├── context-menu.tsx
+│       │   │   │   ├── dialog.tsx
+│       │   │   │   ├── drawer.tsx
+│       │   │   │   ├── navigation-menu.tsx
+│       │   │   │   ├── pagination.tsx
+│       │   │   │   ├── popover.tsx
+│       │   │   │   ├── progress.tsx
+│       │   │   │   ├── radio-group.tsx
+│       │   │   │   ├── resizable.tsx
+│       │   │   │   ├── scroll-area.tsx
+│       │   │   │   ├── select.tsx
+│       │   │   │   ├── separator.tsx
+│       │   │   │   ├── sheet.tsx
+│       │   │   │   ├── sidebar.tsx
+│       │   │   │   ├── skeleton.tsx
+│       │   │   │   ├── slider.tsx
+│       │   │   │   ├── sonner.tsx
+│       │   │   │   ├── spinner.tsx
+│       │   │   │   ├── switch.tsx
+│       │   │   │   ├── table.tsx
+│       │   │   │   ├── tabs.tsx
+│       │   │   │   ├── textarea.tsx
+│       │   │   │   ├── toast.tsx
+│       │   │   │   ├── toaster.tsx
+│       │   │   │   ├── toggle-group.tsx
+│       │   │   │   ├── toggle.tsx
+│       │   │   │   └── tooltip.tsx
+│       │   │   └── layout.tsx
+│       │   ├── hooks/
+│       │   │   ├── use-dark-mode.ts
+│       │   │   ├── use-mobile.tsx
+│       │   │   └── use-toast.ts
+│       │   ├── lib/
+│       │   │   └── utils.ts
+│       │   ├── pages/
+│       │   │   ├── dashboard.tsx
+│       │   │   ├── not-found.tsx
+│       │   │   ├── rules.tsx
+│       │   │   └── scanner.tsx
+│       │   ├── App.tsx
+│       │   ├── index.css
+│       │   └── main.tsx
+│       ├── index.css
+│       ├── index.html
+│       ├── package.json
+│       ├── tsconfig.json
+│       └── vite.config.ts
+├── lib/
+│   ├── api-client-react/
+│   │   ├── src/
+│   │   │   ├── generated/
+│   │   │   │   ├── api.schemas.ts
+│   │   │   │   └── api.ts
+│   │   │   ├── custom-fetch.ts
+│   │   │   └── index.ts
+│   │   ├── package.json
+│   │   └── tsconfig.json
+│   ├── api-spec/
+│   │   ├── openapi.yaml
+│   │   ├── orval.config.ts
+│   │   └── package.json
+│   ├── api-zod/
+│   │   ├── src/
+│   │   │   ├── generated/
+│   │   │   │   ├── types/
+│   │   │   │   │   ├── checkResult.ts
+│   │   │   │   │   ├── getValidationHistoryParams.ts
+│   │   │   │   │   ├── healthStatus.ts
+│   │   │   │   │   ├── index.ts
+│   │   │   │   │   ├── securityRule.ts
+│   │   │   │   │   ├── securityStats.ts
+│   │   │   │   │   ├── securityStatsBlocksByType.ts
+│   │   │   │   │   ├── validationInput.ts
+│   │   │   │   │   └── validationResult.ts
+│   │   │   │   └── api.ts
+│   │   │   └── index.ts
+│   │   ├── package.json
+│   │   └── tsconfig.json
+│   └── db/
+│       ├── src/
+│       │   ├── schema/
+│       │   │   ├── index.ts
+│       │   │   └── security.ts
+│       │   └── index.ts
+│       ├── drizzle.config.ts
+│       ├── package.json
+│       └── tsconfig.json
+├── scripts/
+│   ├── src/
+│   │   └── hello.ts
+│   ├── package.json
+│   ├── post-merge.sh
+│   └── tsconfig.json
+├── .gitignore
+├── .npmrc
+├── .replit
+├── .replitignore
+├── README.md
+├── package.json
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
+├── replit.md
+├── tsconfig.base.json
+└── tsconfig.json
 
+# ​📊 របាយការណ៍សរុបរចនាសម្ព័ន្ធ EI-T Monorepo
+  Architecture
+        
+# ផ្នែក និង ថតសំខាន់ៗ (Directory / Module)ចំនួនឯកសារសមាមាត្រ (%)មុខងារ និង បេសកកម្មចម្បង (Core Responsibility)
+🧱 artifacts/khoem-ai6349.6%Frontend Application (Vite + React, UI Library, Pages & Layouts)
+📦 lib/2822.0%Shared Libraries (API Schemas, Zod, React Client, DB Models)
+⚡ artifacts/api-server2116.5%Backend API Engine (Fastify/Express Server, Security Engine, Dist)
+⚙️ Root Directory118.7%Monorepo Core Configs (pnpm Workspace, Replit, TS Base Config)
+🛠️ scripts/43.2%Automation & CI/CD (Build Hooks & Deployment Scripts)
+🏆 សរុបរួម (Grand Total)127100%រចនាសម្ព័ន្ធ Project ទាំងមូលនៃ EI-T Ecosystem
+
+# ទិន្នន័យលម្អិត និង ការបែងចែកតាមផ្នែក (Deep-Dive Architecture Breakdown)
+​🔹 1. Frontend Web Application (khoem-ai) — 63 ឯកសារ (49.6%)
+​🧱 UI Components (ui/) : 44 ឯកសារ — Design System (Accordion, Button, Dialog, Table, Tabs, Sonner, ល)
+​📄 Pages & Layout : 05 ឯកសារ — Application Views (dashboard, scanner, rules, not-found, layout)
+​🪝 Hooks & Utilities : 04 ឯកសារ — Custom Logic (use-dark-mode, use-mobile, use-toast, utils)
+​⚙️ Setup & Configs : 10 ឯកសារ — App Entry & Build Settings (App.tsx, main.tsx, vite.config.ts, public/, ល)
+​🔹 2. Shared Monorepo Packages (lib/) — 28 ឯកសារ (22.0%)
+​🛡️ api-zod : 13 ឯកសារ — Zod Validation Models & Generated TypeScript Types
+​🔗 api-client-react : 06 ឯកសារ — Generated React API Hooks & Custom Fetch Engine
+​🗄️ db : 06 ឯកសារ — Drizzle ORM Schemas, Security Tables & Database Configs
+​📑 api-spec : 03 ឯកសារ — OpenAPI Specification & Orval Code Generator Specs
+​🔹 3. Core Backend API Server (api-server) — 21 ឯកសារ (16.5%)
+​📦 Built Output (dist/) : 09 ឯកសារ — Production JS Bundles & Source Maps (.mjs, .map)
+​🧠 Source Code (src/) : 09 ឯកសារ — Express Routes, Logger & Security Validation Engine
+​🛠️ Server Controls : 03 ឯកសារ — Package Configurations (package.json, tsconfig.json, build.mjs)
+​🔹 4. Infrastructure & Automation Scripts — 15 ឯកសារ (11.9%)
+​⚙️ Root Configurations : 11 ឯកសារ — Workspace Settings (pnpm-workspace.yaml, .replit, tsconfig.base.json, ល)
+​📜 Utility Scripts : 04 ឯកសារ — Git Automation Hooks & Pipeline Scripts (post-merge.sh, hello.ts, ល)
 <details>
   <summary>🎓 Sololearn Certificates & Learn AI Courses</summary>
 
