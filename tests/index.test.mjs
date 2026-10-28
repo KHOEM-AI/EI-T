@@ -17,3 +17,9 @@ test("ប្រើរួមគ្នាតាម index តែមួយ", () => {
   assert.equal(numberToWords("21", "km"), "ម្ភៃមួយ");
   assert.equal(degToRadPi("90").toFraction(), "1/2");
 });
+
+test("export ធរណីមាត្រ shapes", () => {
+  assert.equal(api.rectangleArea("3", "4").toFraction(), "12");
+  assert.equal(api.circleAreaPi("3").toFraction(), "9");
+  assert.equal(api.classifyTriangleByAngles("3", "4", "5"), "right");
+});

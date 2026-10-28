@@ -5,3 +5,4 @@ export {
   classifyAngle, normalizeDegrees, degToRadPi, radPiToDeg,
   radiansApprox, complement, supplement,
 } from "./geometry/angles.mjs";
+export * from "./geometry/shapes.mjs";

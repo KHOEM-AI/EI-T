@@ -36,3 +36,15 @@
   </ul>
 </details>
 
+
+## 🔢 Numbers & Math (ម៉ូឌុលលេខ និងគណិតវិទ្យា)
+
+ប្រើតាមច្រកតែមួយ `src/index.mjs` (ES module, Node.js, គ្មាន `eval`)។
+
+- `Rational`: ប្រភាគពិតប្រាកដដោយ `BigInt` (`0.1 + 0.2 = 3/10`)
+- `numberToWords(n, "en" | "km" | "zh")`: អានលេខជា ៣ ភាសា (តិចជាង 10^18)
+- `convert(value, from, to)`: បម្លែងឯកតាប្រវែង ម៉ាស ពេលវេលា សីតុណ្ហភាព
+- `classifyAngle`, `degToRadPi`, `radiansApprox`: មុំ (រ៉ាដ្យង់ជាមេគុណ π ពិតប្រាកដ)
+- `rectangleArea`, `triangleAreaSquared`, `circleAreaPi`: រូបធរណីមាត្រ
+
+តេស្ត៖ `npm test`
