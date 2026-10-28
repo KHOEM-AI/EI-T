@@ -1,7 +1,7 @@
 import { Rational as R } from "../numbers/rational.mjs";
 import { powInt } from "../numbers/power.mjs";
 
-export const CONSTANTS_VERSION = "1.0.0";
+export const CONSTANTS_VERSION = "1.0.1";
 
 const sci = (m, e) => R.parse(m).mul(powInt("10", e));
 const SI = "BIPM, The International System of Units (SI Brochure), 9th edition, 2019";
@@ -26,7 +26,7 @@ const defs = [
     source: "CGPM 1954 (10th CGPM) definition" },
   { id: "G", symbol: "G", unit: "m³/(kg·s²)", kind: "approximate", value: sci("6.67430", -11), uncertainty: sci("0.00015", -11),
     name: { en: "Newtonian constant of gravitation", km: "ថេរទំនាញសកល", zh: "万有引力常数" },
-    source: `${CODATA}; 6.67430(15)e-11` },
+    source: `${CODATA} 2022 (same value as 2018); 6.67430(15)e-11` },
   { id: "pi", symbol: "π", unit: "1", kind: "approximate",
     value: R.parse("3.14159265358979323846264338327950288419716939937510"), uncertainty: R.parse(`0.${"0".repeat(49)}1`),
     name: { en: "Pi", km: "ពាយ (π)", zh: "圆周率" }, source: "Mathematical constant; truncated to 50 decimal digits" },
