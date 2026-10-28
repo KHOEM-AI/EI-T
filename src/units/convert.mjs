@@ -7,6 +7,12 @@ const LINEAR = {
   mg: ["mass", "0.000001"], g: ["mass", "0.001"], kg: ["mass", "1"], t: ["mass", "1000"],
   lb: ["mass", "0.45359237"], oz: ["mass", "0.028349523125"],
   ms: ["time", "0.001"], s: ["time", "1"], min: ["time", "60"], h: ["time", "3600"], d: ["time", "86400"],
+  "m/s": ["speed", "1"], "km/h": ["speed", "5/18"], mph: ["speed", "0.44704"], kn: ["speed", "463/900"],
+  N: ["force", "1"], kN: ["force", "1000"], kgf: ["force", "9.80665"], lbf: ["force", "4.4482216152605"],
+  Pa: ["pressure", "1"], kPa: ["pressure", "1000"], bar: ["pressure", "100000"], atm: ["pressure", "101325"],
+  psi: ["pressure", "44482216152605/6451600000"],
+  J: ["energy", "1"], kJ: ["energy", "1000"], cal: ["energy", "4.184"], kcal: ["energy", "4184"],
+  Wh: ["energy", "3600"], kWh: ["energy", "3600000"], eV: ["energy", "0." + "0".repeat(18) + "1602176634"],
 };
 
 // សីតុណ្ហភាពតាមរយៈ Kelvin

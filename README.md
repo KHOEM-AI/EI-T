@@ -43,7 +43,7 @@
 
 - `Rational`: ប្រភាគពិតប្រាកដដោយ `BigInt` (`0.1 + 0.2 = 3/10`)
 - `numberToWords(n, "en" | "km" | "zh")`: អានលេខជា ៣ ភាសា (តិចជាង 10^18)
-- `convert(value, from, to)`: បម្លែងឯកតាប្រវែង ម៉ាស ពេលវេលា សីតុណ្ហភាព
+- `convert(value, from, to)`: បម្លែងឯកតាប្រវែង ម៉ាស ពេលវេលា សីតុណ្ហភាព ល្បឿន កម្លាំង សម្ពាធ ថាមពល
 - `classifyAngle`, `degToRadPi`, `radiansApprox`: មុំ (រ៉ាដ្យង់ជាមេគុណ π ពិតប្រាកដ)
 - `rectangleArea`, `triangleAreaSquared`, `circleAreaPi`: រូបធរណីមាត្រ
 - `solveLinear`, `solveQuadratic`, `exactSqrt`: សមីការលីនេអ៊ែរ និងសមីការការ៉េ (ឫសសនិទានពិតប្រាកដ ឬទម្រង់ `p ± √D`)
