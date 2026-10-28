@@ -47,5 +47,6 @@
 - `classifyAngle`, `degToRadPi`, `radiansApprox`: មុំ (រ៉ាដ្យង់ជាមេគុណ π ពិតប្រាកដ)
 - `rectangleArea`, `triangleAreaSquared`, `circleAreaPi`: រូបធរណីមាត្រ
 - `solveLinear`, `solveQuadratic`, `exactSqrt`: សមីការលីនេអ៊ែរ និងសមីការការ៉េ (ឫសសនិទានពិតប្រាកដ ឬទម្រង់ `p ± √D`)
+- `solveSystem2`: ប្រព័ន្ធសមីការលីនេអ៊ែរ ២ អញ្ញាត (ចម្លើយតែមួយ គ្មានចម្លើយ ឬច្រើនឥតកំណត់)
 
 តេស្ត៖ `npm test`

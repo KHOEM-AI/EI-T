@@ -7,3 +7,4 @@ export {
 } from "./geometry/angles.mjs";
 export * from "./geometry/shapes.mjs";
 export { exactSqrt, solveLinear, solveQuadratic } from "./algebra/equations.mjs";
+export { solveSystem2 } from "./algebra/systems.mjs";
