@@ -23,3 +23,9 @@ test("export ធរណីមាត្រ shapes", () => {
   assert.equal(api.circleAreaPi("3").toFraction(), "9");
   assert.equal(api.classifyTriangleByAngles("3", "4", "5"), "right");
 });
+
+test("export ពិជគណិត", () => {
+  assert.equal(api.solveLinear("2", "3", "7").x.toFraction(), "2");
+  assert.equal(api.solveQuadratic("1", "-3", "2").x2.toFraction(), "2");
+  assert.equal(api.exactSqrt("9/4").toFraction(), "3/2");
+});

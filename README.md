@@ -46,5 +46,6 @@
 - `convert(value, from, to)`: បម្លែងឯកតាប្រវែង ម៉ាស ពេលវេលា សីតុណ្ហភាព
 - `classifyAngle`, `degToRadPi`, `radiansApprox`: មុំ (រ៉ាដ្យង់ជាមេគុណ π ពិតប្រាកដ)
 - `rectangleArea`, `triangleAreaSquared`, `circleAreaPi`: រូបធរណីមាត្រ
+- `solveLinear`, `solveQuadratic`, `exactSqrt`: សមីការលីនេអ៊ែរ និងសមីការការ៉េ (ឫសសនិទានពិតប្រាកដ ឬទម្រង់ `p ± √D`)
 
 តេស្ត៖ `npm test`

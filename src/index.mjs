@@ -6,3 +6,4 @@ export {
   radiansApprox, complement, supplement,
 } from "./geometry/angles.mjs";
 export * from "./geometry/shapes.mjs";
+export { exactSqrt, solveLinear, solveQuadratic } from "./algebra/equations.mjs";
