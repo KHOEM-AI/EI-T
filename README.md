@@ -50,5 +50,6 @@
 - `solveSystem2`: ប្រព័ន្ធសមីការលីនេអ៊ែរ ២ អញ្ញាត (ចម្លើយតែមួយ គ្មានចម្លើយ ឬច្រើនឥតកំណត់)
 - `sum`, `mean`, `median`, `mode`, `range`: ស្ថិតិមូលដ្ឋាន (ពិតប្រាកដដោយ `Rational`)
 - `polyAdd`, `polyMul`, `polyEval`, `polyDivide`, `rationalRoots`: ពហុធា (មេគុណពីដឺក្រេខ្ពស់ទៅទាប) ចែកពហុធា និងរកឫសសនិទានពិតប្រាកដ
+- `matMul`, `matDet`, `matRank`, `matInverse`, `solveSystem`: ម៉ាទ្រីស determinant និងប្រព័ន្ធសមីការ n អញ្ញាត (ពិតប្រាកដ អតិបរមា 50×50)
 
 តេស្ត៖ `npm test`
