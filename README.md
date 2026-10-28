@@ -55,5 +55,6 @@
 - `trigExact`, `exactToString`, `sinApprox`, `cosApprox`, `tanApprox`: ត្រីកោណមាត្រ (ពិតប្រាកដសម្រាប់មុំ 30°/45° ឧ. `√3/2` ហើយប្រហាក់ប្រហែលត្រឹម 30 ខ្ទង់)
 - HTTP API (`npm start`, លំនាំដើម `127.0.0.1:3000`): `POST /v1/call` ជាមួយ `{"fn":"convert","args":["1","km","m"]}`, `GET /v1/functions`, `GET /health` (body អតិបរមា 64KB, `Rational` ត្រឡប់ជាអក្សរប្រភាគ)
 - `getConstant(id)`, `listConstants()`: ថេរគណិតវិទ្យា/រូបវិទ្យា (`c`, `h`, `e_charge`, `k_B`, `N_A`, `g_n`, `atm`, `G`, `pi`, `e`) មានប្រភព កំណែ ឈ្មោះ ៣ ភាសា និង `kind` (`exact` ឬ `approximate`)
+- `cAdd`, `cSub`, `cMul`, `cDiv`, `cConj`, `cAbs2`, `cPowInt`, `cToString`: ចំនួនកុំផ្លិចពិតប្រាកដ (`[re, im]` ឧ. `["1","2"]` = 1+2i)
 
 តេស្ត៖ `npm test`
