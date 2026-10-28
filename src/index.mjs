@@ -12,3 +12,4 @@ export { sum, mean, median, mode, range } from "./stats/basic.mjs";
 export { polyNormalize, polyAdd, polySub, polyMul, polyEval, polyDivide, rationalRoots } from "./algebra/polynomial.mjs";
 export { matIdentity, matTranspose, matMul, matDet, matRank, matInverse, solveSystem } from "./algebra/matrix.mjs";
 export { powInt, logExact } from "./numbers/power.mjs";
+export { trigExact, exactToString, sinApprox, cosApprox, tanApprox } from "./geometry/trig.mjs";

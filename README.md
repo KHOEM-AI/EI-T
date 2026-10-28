@@ -52,5 +52,6 @@
 - `polyAdd`, `polyMul`, `polyEval`, `polyDivide`, `rationalRoots`: ពហុធា (មេគុណពីដឺក្រេខ្ពស់ទៅទាប) ចែកពហុធា និងរកឫសសនិទានពិតប្រាកដ
 - `matMul`, `matDet`, `matRank`, `matInverse`, `solveSystem`: ម៉ាទ្រីស determinant និងប្រព័ន្ធសមីការ n អញ្ញាត (ពិតប្រាកដ អតិបរមា 50×50)
 - `powInt`, `logExact`: ស្វ័យគុណចំនួនគត់ពិតប្រាកដ និងលោការីតពិតប្រាកដ (ឧ. `log₂8 = 3`; បើមិនសនិទាន ត្រឡប់ `null`)
+- `trigExact`, `exactToString`, `sinApprox`, `cosApprox`, `tanApprox`: ត្រីកោណមាត្រ (ពិតប្រាកដសម្រាប់មុំ 30°/45° ឧ. `√3/2` ហើយប្រហាក់ប្រហែលត្រឹម 30 ខ្ទង់)
 
 តេស្ត៖ `npm test`
