@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# EI-T: exact math/number API. Starts only EI-T (default :3000).
+# EI-T: exact math/number API. Starts only EI-T (default :3100).
 # Usage: ./ai.sh [run|stop|restart|status]
 set -u
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
