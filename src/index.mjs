@@ -8,3 +8,4 @@ export {
 export * from "./geometry/shapes.mjs";
 export { exactSqrt, solveLinear, solveQuadratic } from "./algebra/equations.mjs";
 export { solveSystem2 } from "./algebra/systems.mjs";
+export { sum, mean, median, mode, range } from "./stats/basic.mjs";
