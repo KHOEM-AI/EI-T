@@ -13,3 +13,4 @@ export { polyNormalize, polyAdd, polySub, polyMul, polyEval, polyDivide, rationa
 export { matIdentity, matTranspose, matMul, matDet, matRank, matInverse, solveSystem } from "./algebra/matrix.mjs";
 export { powInt, logExact } from "./numbers/power.mjs";
 export { trigExact, exactToString, sinApprox, cosApprox, tanApprox } from "./geometry/trig.mjs";
+export { getConstant, listConstants, CONSTANTS_VERSION } from "./constants/constants.mjs";
