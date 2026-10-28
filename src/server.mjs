@@ -120,7 +120,7 @@ export function createApp() {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  const port = Number(process.env.PORT ?? 3000);
+  const port = Number(process.env.PORT ?? 3100);
   const host = process.env.HOST ?? "127.0.0.1";
   if (!Number.isInteger(port) || port < 0 || port > 65535) throw new RangeError("INVALID_PORT");
   createApp().listen(port, host, () => console.log(`EI-T API: http://${host}:${port}`));

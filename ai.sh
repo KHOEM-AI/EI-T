@@ -3,7 +3,7 @@
 # Usage: ./ai.sh [run|stop|restart|status]
 set -u
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-export PORT="${PORT:-3000}"
+export PORT="${PORT:-3100}"
 export HOST="${HOST:-127.0.0.1}"
 RUN="$DIR/.run"
 PIDF="$RUN/ei-t.pid"
