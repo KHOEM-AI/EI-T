@@ -53,5 +53,6 @@
 - `matMul`, `matDet`, `matRank`, `matInverse`, `solveSystem`: ម៉ាទ្រីស determinant និងប្រព័ន្ធសមីការ n អញ្ញាត (ពិតប្រាកដ អតិបរមា 50×50)
 - `powInt`, `logExact`: ស្វ័យគុណចំនួនគត់ពិតប្រាកដ និងលោការីតពិតប្រាកដ (ឧ. `log₂8 = 3`; បើមិនសនិទាន ត្រឡប់ `null`)
 - `trigExact`, `exactToString`, `sinApprox`, `cosApprox`, `tanApprox`: ត្រីកោណមាត្រ (ពិតប្រាកដសម្រាប់មុំ 30°/45° ឧ. `√3/2` ហើយប្រហាក់ប្រហែលត្រឹម 30 ខ្ទង់)
+- HTTP API (`npm start`, លំនាំដើម `127.0.0.1:3000`): `POST /v1/call` ជាមួយ `{"fn":"convert","args":["1","km","m"]}`, `GET /v1/functions`, `GET /health` (body អតិបរមា 64KB, `Rational` ត្រឡប់ជាអក្សរប្រភាគ)
 
 តេស្ត៖ `npm test`
