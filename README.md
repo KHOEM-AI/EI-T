@@ -51,5 +51,6 @@
 - `sum`, `mean`, `median`, `mode`, `range`: ស្ថិតិមូលដ្ឋាន (ពិតប្រាកដដោយ `Rational`)
 - `polyAdd`, `polyMul`, `polyEval`, `polyDivide`, `rationalRoots`: ពហុធា (មេគុណពីដឺក្រេខ្ពស់ទៅទាប) ចែកពហុធា និងរកឫសសនិទានពិតប្រាកដ
 - `matMul`, `matDet`, `matRank`, `matInverse`, `solveSystem`: ម៉ាទ្រីស determinant និងប្រព័ន្ធសមីការ n អញ្ញាត (ពិតប្រាកដ អតិបរមា 50×50)
+- `powInt`, `logExact`: ស្វ័យគុណចំនួនគត់ពិតប្រាកដ និងលោការីតពិតប្រាកដ (ឧ. `log₂8 = 3`; បើមិនសនិទាន ត្រឡប់ `null`)
 
 តេស្ត៖ `npm test`
