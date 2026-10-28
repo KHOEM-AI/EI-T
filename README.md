@@ -49,5 +49,6 @@
 - `solveLinear`, `solveQuadratic`, `exactSqrt`: សមីការលីនេអ៊ែរ និងសមីការការ៉េ (ឫសសនិទានពិតប្រាកដ ឬទម្រង់ `p ± √D`)
 - `solveSystem2`: ប្រព័ន្ធសមីការលីនេអ៊ែរ ២ អញ្ញាត (ចម្លើយតែមួយ គ្មានចម្លើយ ឬច្រើនឥតកំណត់)
 - `sum`, `mean`, `median`, `mode`, `range`: ស្ថិតិមូលដ្ឋាន (ពិតប្រាកដដោយ `Rational`)
+- `polyAdd`, `polyMul`, `polyEval`, `polyDivide`, `rationalRoots`: ពហុធា (មេគុណពីដឺក្រេខ្ពស់ទៅទាប) ចែកពហុធា និងរកឫសសនិទានពិតប្រាកដ
 
 តេស្ត៖ `npm test`
