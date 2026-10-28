@@ -2,6 +2,9 @@ import { Rational as R } from "./rational.mjs";
 
 const toR = (v) => (v instanceof R ? v : R.parse(v));
 const Z = (z) => {
+  if (z && typeof z === "object" && !Array.isArray(z) && "re" in z && "im" in z) {
+    return { re: toR(z.re), im: toR(z.im) };
+  }
   if (!Array.isArray(z) || z.length !== 2) throw new TypeError("INVALID_COMPLEX");
   return { re: toR(z[0]), im: toR(z[1]) };
 };
