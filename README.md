@@ -58,5 +58,7 @@
 - `cAdd`, `cSub`, `cMul`, `cDiv`, `cConj`, `cAbs2`, `cPowInt`, `cToString`: ចំនួនកុំផ្លិចពិតប្រាកដ (`[re, im]` ឧ. `["1","2"]` = 1+2i)
 - `add`, `sub`, `mul`, `div`: បូក ដក គុណ ចែក ពិតប្រាកដ (ទទួលអក្សរលេខ ឧ. `"0.1"`, `"3/4"`; ចែកនឹង 0 ឲ្យ `DIVISION_BY_ZERO`)
 - `speed`, `force`, `weight`, `kineticEnergy`: មេកានិច SI (ល្បឿន v=d/t, កម្លាំង F=m·a, ទម្ងន់ W=m·g_n, ថាមពលស៊ីនេទិច E=½mv²) ពិតប្រាកដដោយ `Rational`
+- `density`, `pressure`, `work`, `power`: ដង់ស៊ីតេ ρ=m/V, សម្ពាធ P=F/A, កិច្ចការ W=F·d, ថាមពល P=W/t (SI ពិតប្រាកដដោយ `Rational`)
+- `molesFromParticles`, `particlesFromMoles`, `molesFromMass`, `massFromMoles`: គីមីវិទ្យាមូលដ្ឋាន ម៉ូល n=N/N_A, N=n·N_A, n=m/M, m=n·M (ប្រើ `N_A` ពិតប្រាកដ; ម៉ាសម៉ូលេគុល M ជា g/mol ដែលអ្នកផ្តល់)
 
 តេស្ត៖ `npm test`
