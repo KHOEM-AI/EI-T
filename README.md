@@ -56,5 +56,7 @@
 - HTTP API (`npm start`, លំនាំដើម `127.0.0.1:3100`): `POST /v1/call` ជាមួយ `{"fn":"convert","args":["1","km","m"]}`, `GET /v1/functions`, `GET /health` (body អតិបរមា 64KB, `Rational` ត្រឡប់ជាអក្សរប្រភាគ)
 - `getConstant(id)`, `listConstants()`: ថេរគណិតវិទ្យា/រូបវិទ្យា (`c`, `h`, `e_charge`, `k_B`, `N_A`, `g_n`, `atm`, `G`, `pi`, `e`) មានប្រភព កំណែ ឈ្មោះ ៣ ភាសា និង `kind` (`exact` ឬ `approximate`)
 - `cAdd`, `cSub`, `cMul`, `cDiv`, `cConj`, `cAbs2`, `cPowInt`, `cToString`: ចំនួនកុំផ្លិចពិតប្រាកដ (`[re, im]` ឧ. `["1","2"]` = 1+2i)
+- `add`, `sub`, `mul`, `div`: បូក ដក គុណ ចែក ពិតប្រាកដ (ទទួលអក្សរលេខ ឧ. `"0.1"`, `"3/4"`; ចែកនឹង 0 ឲ្យ `DIVISION_BY_ZERO`)
+- `speed`, `force`, `weight`, `kineticEnergy`: មេកានិច SI (ល្បឿន v=d/t, កម្លាំង F=m·a, ទម្ងន់ W=m·g_n, ថាមពលស៊ីនេទិច E=½mv²) ពិតប្រាកដដោយ `Rational`
 
 តេស្ត៖ `npm test`
