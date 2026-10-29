@@ -15,3 +15,4 @@ export { powInt, logExact } from "./numbers/power.mjs";
 export { trigExact, exactToString, sinApprox, cosApprox, tanApprox } from "./geometry/trig.mjs";
 export { getConstant, listConstants, CONSTANTS_VERSION } from "./constants/constants.mjs";
 export { cAdd, cSub, cMul, cDiv, cConj, cAbs2, cPowInt, cToString } from "./numbers/complex.mjs";
+export { add, sub, mul, div } from "./numbers/arithmetic.mjs";
