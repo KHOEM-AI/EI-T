@@ -18,3 +18,15 @@ export const kineticEnergy = (m, v) => {
   const vv = toR(v);
   return toR(m).mul(vv).mul(vv).div(new R(2));
 };
+
+// ដង់ស៊ីតេ ρ = m / V
+export const density = (m, V) => toR(m).div(toR(V));
+
+// សម្ពាធ P = F / A
+export const pressure = (F, A) => toR(F).div(toR(A));
+
+// កិច្ចការ W = F · d
+export const work = (F, d) => toR(F).mul(toR(d));
+
+// ថាមពល (power) P = W / t
+export const power = (W, t) => toR(W).div(toR(t));
