@@ -16,3 +16,4 @@ export { trigExact, exactToString, sinApprox, cosApprox, tanApprox } from "./geo
 export { getConstant, listConstants, CONSTANTS_VERSION } from "./constants/constants.mjs";
 export { cAdd, cSub, cMul, cDiv, cConj, cAbs2, cPowInt, cToString } from "./numbers/complex.mjs";
 export { add, sub, mul, div } from "./numbers/arithmetic.mjs";
+export { speed, force, weight, kineticEnergy } from "./physics/mechanics.mjs";
