@@ -61,4 +61,22 @@
 - `density`, `pressure`, `work`, `power`: ដង់ស៊ីតេ ρ=m/V, សម្ពាធ P=F/A, កិច្ចការ W=F·d, ថាមពល P=W/t (SI ពិតប្រាកដដោយ `Rational`)
 - `molesFromParticles`, `particlesFromMoles`, `molesFromMass`, `massFromMoles`: គីមីវិទ្យាមូលដ្ឋាន ម៉ូល n=N/N_A, N=n·N_A, n=m/M, m=n·M (ប្រើ `N_A` ពិតប្រាកដ; ម៉ាសម៉ូលេគុល M ជា g/mol ដែលអ្នកផ្តល់)
 
+## 💻 ភាសាកូដ (Languages)
+
+មុខងារគណិតវិទ្យា (បូក ដក គុណ ចែក ពិតប្រាកដ) មានក្នុងគ្រប់ភាសាខាងក្រោម។ រូបវិទ្យា និងគីមីមូលដ្ឋានក៏មានដែរ លើកលែងចំណុចដែលបានកត់សម្គាល់។
+
+| ភាសា | ថត | មាន |
+|---|---|---|
+| JavaScript (MJS) | `src/` | ទាំងអស់ (ពេញលេញបំផុត៖ លេខធំគ្មានដែនកំណត់, HTTP API) |
+| TypeScript + TSX | `tsx/` | គណិត + Calculator (React) |
+| JSX | `jsx/` | Calculator (React) ប្រើ `src/index.mjs` |
+| JavaScript (កម្មវិធីរុករក) + HTML + CSS | `web/` | ទំព័រ `web/index.html` បើកដោយផ្ទាល់ (ទាំងអស់) |
+| Python | `py/` | ទាំងអស់ |
+| C | `c/` | គណិត មេកានិច ម៉ាស↔ម៉ូល |
+| C++ | `cpp/` | គណិត (`rational.hpp`) + មេកានិច និងម៉ាស↔ម៉ូល (`science.hpp`) |
+
+ចំណាំ៖ C និង C++ ប្រើចំនួនគត់ ៦៤-bit ដូច្នេះលទ្ធផលលើសដែនកំណត់បោះ `OVERFLOW` (មិនឲ្យចម្លើយខុសស្ងាត់ៗ) ហើយមុខងារម៉ូល↔ភាគល្អិត (ដែលប្រើ `N_A` ≈ 6×10²³) មិនមានក្នុង C/C++ ទេ។ HTML និង CSS មិនគណនាខ្លួនឯងទេ ទំព័រ `web/` ប្រើ `web/eit.js` គណនា។
+
+តេស្តគ្រប់ភាសា (រំលងភាសាដែលម៉ាស៊ីនគ្មាន)៖ `bash scripts/test-all.sh` (សម្រាប់ TSX/JSX ត្រូវ `npm install` មុន)
+
 តេស្ត៖ `npm test`

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EI-T Exact Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>EI-T Exact Calculator</h1>
+    <p class="sub">Exact math, physics and chemistry. 0.1 + 0.2 = 3/10.</p>
+
+    <section class="card">
+      <label>Function
+        <select id="fn" aria-label="function"></select>
+      </label>
+      <div id="inputs" style="display: grid; gap: 12px;"></div>
+      <div id="result" class="result" aria-live="polite">
+        <div class="main" id="main"></div>
+        <div class="dec" id="dec"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="eit.js"></script>
+  <script>
+    "use strict";
+    // id, label, argument names with defaults, formula note
+    var FUNCS = [
+      { id: "add", label: "a + b", args: [["a", "0.1"], ["b", "0.2"]] },
+      { id: "sub", label: "a - b", args: [["a", "1"], ["b", "0.9"]] },
+      { id: "mul", label: "a x b", args: [["a", "3/4"], ["b", "2/3"]] },
+      { id: "div", label: "a / b", args: [["a", "1"], ["b", "3"]] },
+      { id: "speed", label: "Speed v = d / t", args: [["distance d (m)", "100"], ["time t (s)", "20"]] },
+      { id: "force", label: "Force F = m a", args: [["mass m (kg)", "2"], ["acceleration a (m/s2)", "3/2"]] },
+      { id: "weight", label: "Weight W = m g", args: [["mass m (kg)", "10"]] },
+      { id: "kineticEnergy", label: "Kinetic energy E = m v^2 / 2", args: [["mass m (kg)", "2"], ["speed v (m/s)", "3"]] },
+      { id: "density", label: "Density = m / V", args: [["mass m (kg)", "500"], ["volume V (m3)", "2"]] },
+      { id: "pressure", label: "Pressure P = F / A", args: [["force F (N)", "100"], ["area A (m2)", "4"]] },
+      { id: "work", label: "Work W = F d", args: [["force F (N)", "10"], ["distance d (m)", "3/2"]] },
+      { id: "power", label: "Power P = W / t", args: [["work W (J)", "60"], ["time t (s)", "12"]] },
+      { id: "molesFromMass", label: "Moles n = m / M", args: [["mass m (g)", "36"], ["molar mass M (g/mol)", "18"]] },
+      { id: "massFromMoles", label: "Mass m = n M", args: [["moles n (mol)", "2"], ["molar mass M (g/mol)", "18"]] },
+      { id: "molesFromParticles", label: "Moles n = N / N_A", args: [["particles N", "602214076000000000000000"]] },
+      { id: "particlesFromMoles", label: "Particles N = n N_A", args: [["moles n (mol)", "1"]] }
+    ];
+
+    var sel = document.getElementById("fn");
+    var box = document.getElementById("inputs");
+    var res = document.getElementById("result");
+    var mainEl = document.getElementById("main");
+    var decEl = document.getElementById("dec");
+    var fields = [];
+
+    FUNCS.forEach(function (f, i) {
+      var o = document.createElement("option");
+      o.value = String(i);
+      o.textContent = f.label;
+      sel.appendChild(o);
+    });
+
+    function current() { return FUNCS[Number(sel.value)]; }
+
+    function build() {
+      box.textContent = "";
+      fields = current().args.map(function (a, i) {
+        var label = document.createElement("label");
+        label.textContent = a[0];
+        var input = document.createElement("input");
+        input.value = a[1];
+        input.inputMode = "text";
+        input.autocomplete = "off";
+        input.setAttribute("aria-label", "arg" + (i + 1));
+        input.addEventListener("input", compute);
+        label.appendChild(input);
+        box.appendChild(label);
+        return input;
+      });
+      compute();
+    }
+
+    function compute() {
+      try {
+        var r = EIT[current().id].apply(null, fields.map(function (x) { return x.value; }));
+        res.className = "result";
+        mainEl.textContent = "= " + EIT.toFraction(r);
+        decEl.textContent = "\u2248 " + EIT.toDecimal(r, 10);
+      } catch (e) {
+        res.className = "result error";
+        mainEl.textContent = "Error: " + (e && /^[A-Z][A-Z0-9_]+$/.test(e.message) ? e.message : "INVALID_ARGUMENTS");
+        decEl.textContent = "";
+      }
+    }
+
+    sel.addEventListener("change", build);
+    build();
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #666666;
+  --card: #f4f6f8;
+  --line: #d0d7de;
+  --accent: #0b6bcb;
+  --error: #b42318;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1419;
+    --fg: #e6e9ec;
+    --muted: #9aa4af;
+    --card: #1a222b;
+    --line: #2d3945;
+    --accent: #5aa9ff;
+    --error: #ff8a80;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 16px;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+main { max-width: 480px; margin: 0 auto; }
+h1 { font-size: 1.4rem; margin: 0 0 4px; }
+.sub { color: var(--muted); margin: 0 0 16px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+label { display: grid; gap: 4px; font-size: 0.9rem; color: var(--muted); }
+
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.result { min-height: 3.2em; }
+.result .main { font-size: 1.3rem; font-weight: 600; word-break: break-all; }
+.result .dec { color: var(--muted); word-break: break-all; }
+.result.error .main { color: var(--error); }
