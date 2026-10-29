@@ -17,3 +17,4 @@ export { getConstant, listConstants, CONSTANTS_VERSION } from "./constants/const
 export { cAdd, cSub, cMul, cDiv, cConj, cAbs2, cPowInt, cToString } from "./numbers/complex.mjs";
 export { add, sub, mul, div } from "./numbers/arithmetic.mjs";
 export { speed, force, weight, kineticEnergy, density, pressure, work, power } from "./physics/mechanics.mjs";
+export { molesFromParticles, particlesFromMoles, molesFromMass, massFromMoles } from "./chemistry/moles.mjs";
